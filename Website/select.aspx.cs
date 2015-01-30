@@ -15,8 +15,8 @@ namespace Website
             Stopwatch stopWatch = new Stopwatch();
             var repository = new Repository();
             stopWatch.Start();
-            repository.Select();
-            lbl1.Text = stopWatch.Elapsed.TotalMilliseconds.ToString();
+            var value = repository.Select();
+            lbl1.Text = stopWatch.Elapsed.TotalMilliseconds.ToString() + "; text length: " + (value != null? value.Length : 0);
         }
     }
 }
